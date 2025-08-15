@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research & Publications - Fatema Binte Emran</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Lora', 'serif'], heading: ['Merriweather', 'serif'] },
+          colors: { primary: '#3B82F6', accent: '#22C55E', darkbg: '#0F172A' },
+          boxShadow: { glow: '0 0 15px rgba(59,130,246,0.4)' }
+        }
+      }
+    }
+  </script>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-white dark:bg-darkbg text-slate-900 dark:text-slate-100 transition-colors duration-500">
+
+<!-- Navbar -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-darkbg/80 backdrop-blur border-b border-slate-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+    <h1 class="text-2xl font-heading font-bold text-primary">Fatema Binte Emran</h1>
+    <nav class="hidden md:flex gap-6 font-medium">
+      <a href="index.html" class="hover:text-primary">Home</a>
+      <a href="projects.html" class="hover:text-primary">Projects</a>
+      <a href="research.html" class="text-primary font-bold">Research</a>
+      <a href="education.html" class="hover:text-primary">Education</a>
+      <a href="awards.html" class="hover:text-primary">Awards</a>
+      <a href="achievements.html" class="hover:text-primary">Achievements</a>
+      <a href="volunteering.html" class="hover:text-primary">Volunteering</a>
+      <a href="experience.html" class="hover:text-primary">Experience</a>
+      <a href="certificates.html" class="hover:text-primary">Certificates</a>
+    </nav>
+    <button onclick="toggleTheme()" class="p-2 rounded-lg border border-slate-300 dark:border-slate-700 hover:shadow-glow">
+      <span class="dark:hidden">🌙</span>
+      <span class="hidden dark:inline">☀️</span>
+    </button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="py-16 text-center bg-gradient-to-b from-primary/10 to-transparent" data-aos="fade-up">
+  <h2 class="text-4xl font-heading font-bold">Research & Publications</h2>
+  <p class="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+    My ongoing journal research works and conference paper submissions in AI, Machine Learning, and Data Science.
+  </p>
+</section>
+
+<!-- Ongoing Journal Research -->
+<section class="max-w-7xl mx-auto px-4 py-10" data-aos="fade-up">
+  <h3 class="text-2xl font-heading font-bold mb-6">Ongoing Journal Research</h3>
+  <div class="grid md:grid-cols-2 gap-8">
+    <div class="bg-slate-50 dark:bg-slate-800 p-6 rounded-lg shadow hover:shadow-glow transition">
+      <h4 class="text-xl font-bold mb-2">Multimodal Emotion Recognition with Text, Audio, and Video</h4>
+      <p class="text-slate-600 dark:text-slate-300">Developing a deep learning architecture that integrates multimodal signals to improve accuracy in emotion classification.</p>
+    </div>
+    <div class="bg-slate-50 dark:bg-slate-800 p-6 rounded-lg shadow hover:shadow-glow transition">
+      <h4 class="text-xl font-bold mb-2">A Comprehensive Review on Wildfire Prediction</h4>
+      <p class="text-slate-600 dark:text-slate-300">Surveying and evaluating state-of-the-art techniques, datasets, and challenges in wildfire prediction systems.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Submitted Conference Papers -->
+<section class="max-w-7xl mx-auto px-4 py-10" data-aos="fade-up">
+  <h3 class="text-2xl font-heading font-bold mb-6">Submitted Conference Papers</h3>
+  <div class="space-y-6">
+    <div class="flex gap-4 items-center">
+      <div>
+        <h4 class="font-bold">Pneumonia Detection using Deep Learning and Explainable AI</h4>
+        <p class="text-sm text-slate-500">3rd International Conference on Big Data, IoT, and Machine Learning (BIM 2025) | 2025</p>
+      </div>
+    </div>
+    <div class="flex gap-4 items-center">
+      <div>
+        <h4 class="font-bold">Brain Tumor Classification via Transfer Learning and Visual Interpretability</h4>
+        <p class="text-sm text-slate-500">3rd International Conference on Big Data, IoT, and Machine Learning (BIM 2025) | 2025</p>
+      </div>
+    </div>
+    <div class="flex gap-4 items-center">
+      <div>
+        <h4 class="font-bold">Flood Prediction through Hybrid Machine Learning and Symbolic Logic</h4>
+        <p class="text-sm text-slate-500">International Conference on Computer and Information Technology (ICCIT 2025) | 2025</p>
+      </div>
+    </div>
+    <div class="flex gap-4 items-center">
+      <div>
+        <h4 class="font-bold">Fake News Detection via HNFuse: A Symbolic–Statistical Hybrid with Interpretable Ensembles</h4>
+        <p class="text-sm text-slate-500">International Conference on Computer and Information Technology (ICCIT 2025) | 2025</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-slate-100 dark:bg-slate-900 py-6 text-center text-sm text-slate-600 dark:text-slate-400 mt-16">
+  © <span id="year"></span> Fatema Binte Emran. All Rights Reserved.
+</footer>
+
+<!-- Scripts -->
+<script>
+function toggleTheme() {
+  document.documentElement.classList.toggle('dark');
+}
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800 });</script>
+
+</body>
+</html>

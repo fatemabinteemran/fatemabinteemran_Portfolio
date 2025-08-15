@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects - Fatema Binte Emran</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Lora', 'serif'], heading: ['Merriweather', 'serif'] },
+          colors: { primary: '#3B82F6', accent: '#22C55E', darkbg: '#0F172A' },
+          boxShadow: { glow: '0 0 15px rgba(59,130,246,0.4)' }
+        }
+      }
+    }
+  </script>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-white dark:bg-darkbg text-slate-900 dark:text-slate-100 transition-colors duration-500">
+
+<!-- Navbar -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-darkbg/80 backdrop-blur border-b border-slate-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+    <h1 class="text-2xl font-heading font-bold text-primary">Fatema Binte Emran</h1>
+    <nav class="hidden md:flex gap-6 font-medium">
+      <a href="index.html" class="hover:text-primary">Home</a>
+      <a href="projects.html" class="hover:text-primary">Projects</a>
+      <a href="research.html" class="hover:text-primary">Research</a>
+      <a href="education.html" class="hover:text-primary">Education</a>
+      <a href="awards.html" class="hover:text-primary">Awards</a>
+      <a href="achievements.html" class="hover:text-primary">Achievements</a>
+      <a href="volunteering.html" class="hover:text-primary">Volunteering</a>
+      <a href="experience.html" class="hover:text-primary">Experience</a>
+      <a href="certificates.html" class="hover:text-primary">Certificates</a>
+    </nav>
+    <button onclick="toggleTheme()" class="p-2 rounded-lg border border-slate-300 dark:border-slate-700 hover:shadow-glow">
+      <span class="dark:hidden">🌙</span>
+      <span class="hidden dark:inline">☀️</span>
+    </button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="text-center py-16 bg-gradient-to-b from-primary/10 to-transparent" data-aos="fade-up">
+  <h2 class="text-4xl font-heading font-bold">Projects & Portfolio</h2>
+  <p class="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+    A showcase of my work in AI, Machine Learning, Web Development, and other technical domains.
+  </p>
+</section>
+
+<!-- Filters -->
+<div class="max-w-7xl mx-auto px-4 mb-8 flex flex-wrap gap-3 justify-center" data-aos="fade-up">
+  <button class="filter-btn bg-primary text-white px-4 py-2 rounded-full" data-filter="all">All</button>
+  <button class="filter-btn bg-slate-200 dark:bg-slate-700 px-4 py-2 rounded-full" data-filter="AI">AI & ML</button>
+  <button class="filter-btn bg-slate-200 dark:bg-slate-700 px-4 py-2 rounded-full" data-filter="Web">Web Development</button>
+  <button class="filter-btn bg-slate-200 dark:bg-slate-700 px-4 py-2 rounded-full" data-filter="Data">Data Science</button>
+  <button class="filter-btn bg-slate-200 dark:bg-slate-700 px-4 py-2 rounded-full" data-filter="Other">Others</button>
+</div>
+
+<!-- Projects Grid -->
+<section id="projects-grid" class="max-w-7xl mx-auto px-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up">
+  <!-- Dynamic GitHub projects will be injected here -->
+</section>
+
+<!-- Footer -->
+<footer class="bg-slate-100 dark:bg-slate-900 py-6 text-center text-sm text-slate-600 dark:text-slate-400 mt-16">
+  © <span id="year"></span> Fatema Binte Emran. All Rights Reserved.
+</footer>
+
+<!-- Scripts -->
+<script>
+function toggleTheme() {
+  document.documentElement.classList.toggle('dark');
+}
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Fetch GitHub projects dynamically
+fetch('https://api.github.com/users/fatemabinteemran/repos')
+
+  .then(res => res.json())
+  .then(data => {
+    const grid = document.getElementById('projects-grid');
+    data.forEach(repo => {
+      const card = document.createElement('div');
+      card.className = "project-card bg-white dark:bg-slate-800 p-6 rounded-lg shadow hover:shadow-glow transition-transform transform hover:-translate-y-2";
+      card.setAttribute('data-category', 'Other'); // Default category (can be changed manually later)
+
+      card.innerHTML = `
+        <h3 class="text-xl font-heading font-bold text-primary mb-2">${repo.name}</h3>
+        <p class="text-slate-600 dark:text-slate-300 mb-4">${repo.description || 'No description available.'}</p>
+        <div class="flex items-center gap-2 mb-4">
+          <span class="w-3 h-3 rounded-full bg-primary"></span>
+          <span class="text-sm">${repo.language || 'Unknown'}</span>
+        </div>
+        <p class="text-xs text-slate-500 mb-4">Last updated: ${new Date(repo.updated_at).toLocaleDateString()}</p>
+        <div class="flex gap-3">
+          <a href="${repo.html_url}" target="_blank" class="bg-primary text-white px-3 py-1 rounded hover:opacity-90">GitHub</a>
+          <a href="project-details.html?name=${repo.name}" class="bg-accent text-white px-3 py-1 rounded hover:opacity-90">Read More</a>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  });
+
+// Filter functionality
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const filter = btn.getAttribute('data-filter');
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('bg-primary', 'text-white'));
+    btn.classList.add('bg-primary', 'text-white');
+    document.querySelectorAll('.project-card').forEach(card => {
+      if (filter === 'all' || card.getAttribute('data-category') === filter) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+</script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800 });</script>
+
+</body>
+</html>

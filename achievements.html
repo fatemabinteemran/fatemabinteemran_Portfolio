@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Achievements - Fatema Binte Emran</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Lora', 'serif'], heading: ['Merriweather', 'serif'] },
+          colors: { primary: '#3B82F6', accent: '#22C55E', darkbg: '#0F172A' },
+          boxShadow: { glow: '0 0 15px rgba(59,130,246,0.4)' }
+        }
+      }
+    }
+  </script>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-white dark:bg-darkbg text-slate-900 dark:text-slate-100 transition-colors duration-500">
+
+<!-- Navbar -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-darkbg/80 backdrop-blur border-b border-slate-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+    <h1 class="text-2xl font-heading font-bold text-primary">Fatema Binte Emran</h1>
+    <nav class="hidden md:flex gap-6 font-medium">
+      <a href="index.html" class="hover:text-primary">Home</a>
+      <a href="projects.html" class="hover:text-primary">Projects</a>
+      <a href="research.html" class="hover:text-primary">Research</a>
+      <a href="education.html" class="hover:text-primary">Education</a>
+      <a href="awards.html" class="hover:text-primary">Awards</a>
+      <a href="achievements.html" class="text-primary font-bold">Achievements</a>
+      <a href="volunteering.html" class="hover:text-primary">Volunteering</a>
+      <a href="experience.html" class="hover:text-primary">Experience</a>
+      <a href="certificates.html" class="hover:text-primary">Certificates</a>
+    </nav>
+    <button onclick="toggleTheme()" class="p-2 rounded-lg border border-slate-300 dark:border-slate-700 hover:shadow-glow">
+      <span class="dark:hidden">🌙</span>
+      <span class="hidden dark:inline">☀️</span>
+    </button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="py-16 text-center bg-gradient-to-b from-primary/10 to-transparent" data-aos="fade-up">
+  <h2 class="text-4xl font-heading font-bold">Achievements</h2>
+  <p class="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+    Notable accomplishments in research, leadership, and technology.
+  </p>
+</section>
+
+<!-- Achievements Grid -->
+<section class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-8">
+
+  <!-- Achievement Card -->
+  <div class="bg-slate-50 dark:bg-slate-800 rounded-xl shadow hover:shadow-glow transition p-5" data-aos="fade-up">
+    <img src="images/research1.jpg" alt="Research Papers" class="w-full h-40 object-cover rounded-lg mb-4">
+    <h3 class="text-lg font-heading font-bold">Research & Publications</h3>
+    <p class="text-slate-600 dark:text-slate-300 text-sm mt-2">
+      Submitted 4 conference papers in AI/ML domains including Pneumonia Detection, Brain Tumor Detection, Flood Prediction, and Fake News Detection.
+    </p>
+  </div>
+
+  <div class="bg-slate-50 dark:bg-slate-800 rounded-xl shadow hover:shadow-glow transition p-5" data-aos="fade-up" data-aos-delay="100">
+    <img src="images/ongoing.jpg" alt="Ongoing Research" class="w-full h-40 object-cover rounded-lg mb-4">
+    <h3 class="text-lg font-heading font-bold">Ongoing Research</h3>
+    <p class="text-slate-600 dark:text-slate-300 text-sm mt-2">
+      Currently working on two journal papers: Multimodal Emotion Recognition with text, audio, and video; and a review on Wildfire Prediction.
+    </p>
+  </div>
+
+  <div class="bg-slate-50 dark:bg-slate-800 rounded-xl shadow hover:shadow-glow transition p-5" data-aos="fade-up" data-aos-delay="200">
+    <img src="images/github.jpg" alt="GitHub Projects" class="w-full h-40 object-cover rounded-lg mb-4">
+    <h3 class="text-lg font-heading font-bold">GitHub Projects</h3>
+    <p class="text-slate-600 dark:text-slate-300 text-sm mt-2">
+      Developed and published multiple AI/ML and Data Science projects on GitHub with public access and documentation.
+    </p>
+  </div>
+
+  <div class="bg-slate-50 dark:bg-slate-800 rounded-xl shadow hover:shadow-glow transition p-5" data-aos="fade-up">
+    <img src="images/leadership.jpg" alt="Leadership Roles" class="w-full h-40 object-cover rounded-lg mb-4">
+    <h3 class="text-lg font-heading font-bold">Leadership Roles</h3>
+    <p class="text-slate-600 dark:text-slate-300 text-sm mt-2">
+      General Secretary – IEEE CS IIUC SBC (2025–2026), Event Management Executive – IEEE CS Bangladesh Chapter (2025), leadership in IIUC Computer Club.
+    </p>
+  </div>
+
+  <div class="bg-slate-50 dark:bg-slate-800 rounded-xl shadow hover:shadow-glow transition p-5" data-aos="fade-up" data-aos-delay="100">
+    <img src="images/engangement.png" alt="Special Engagements" class="w-full h-40 object-cover rounded-lg mb-4">
+    <h3 class="text-lg font-heading font-bold">Special Engagements</h3>
+    <p class="text-slate-600 dark:text-slate-300 text-sm mt-2">
+      Participant in ICISET 2024, KAIST Workshop on Technology & Innovation, NASA Space Apps, and ICRCS 2024.
+    </p>
+  </div>
+
+  <div class="bg-slate-50 dark:bg-slate-800 rounded-xl shadow hover:shadow-glow transition p-5" data-aos="fade-up" data-aos-delay="200">
+    <img src="images/conference.jpg" alt="Conference Participation" class="w-full h-40 object-cover rounded-lg mb-4">
+    <h3 class="text-lg font-heading font-bold">Conference Participation</h3>
+    <p class="text-slate-600 dark:text-slate-300 text-sm mt-2">
+      Actively participated in multiple international conferences and workshops focusing on innovation and computer science.
+    </p>
+  </div>
+
+</section>
+
+<!-- Footer -->
+<footer class="bg-slate-100 dark:bg-slate-900 py-6 text-center text-sm text-slate-600 dark:text-slate-400 mt-16">
+  © <span id="year"></span> Fatema Binte Emran. All Rights Reserved.
+</footer>
+
+<!-- Scripts -->
+<script>
+function toggleTheme() {
+  document.documentElement.classList.toggle('dark');
+}
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800 });</script>
+
+</body>
+</html>

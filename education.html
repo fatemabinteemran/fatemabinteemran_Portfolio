@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Education - Fatema Binte Emran</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Lora', 'serif'], heading: ['Merriweather', 'serif'] },
+          colors: { primary: '#3B82F6', accent: '#22C55E', darkbg: '#0F172A' },
+          boxShadow: { glow: '0 0 15px rgba(59,130,246,0.4)' }
+        }
+      }
+    }
+  </script>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-white dark:bg-darkbg text-slate-900 dark:text-slate-100 transition-colors duration-500">
+
+<!-- Navbar -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-darkbg/80 backdrop-blur border-b border-slate-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+    <h1 class="text-2xl font-heading font-bold text-primary">Fatema Binte Emran</h1>
+    <nav class="hidden md:flex gap-6 font-medium">
+      <a href="index.html" class="hover:text-primary">Home</a>
+      <a href="projects.html" class="hover:text-primary">Projects</a>
+      <a href="research.html" class="hover:text-primary">Research</a>
+      <a href="education.html" class="text-primary font-bold">Education</a>
+      <a href="awards.html" class="hover:text-primary">Awards</a>
+      <a href="achievements.html" class="hover:text-primary">Achievements</a>
+      <a href="volunteering.html" class="hover:text-primary">Volunteering</a>
+      <a href="experience.html" class="hover:text-primary">Experience</a>
+      <a href="certificates.html" class="hover:text-primary">Certificates</a>
+    </nav>
+    <button onclick="toggleTheme()" class="p-2 rounded-lg border border-slate-300 dark:border-slate-700 hover:shadow-glow">
+      <span class="dark:hidden">🌙</span>
+      <span class="hidden dark:inline">☀️</span>
+    </button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="py-16 text-center bg-gradient-to-b from-primary/10 to-transparent" data-aos="fade-up">
+  <h2 class="text-4xl font-heading font-bold">Education</h2>
+  <p class="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+    My academic journey from school to university, highlighting my dedication to learning and achievement.
+  </p>
+</section>
+
+<!-- Timeline -->
+<section class="max-w-5xl mx-auto px-4 py-10">
+  <div class="relative border-l border-slate-300 dark:border-slate-700">
+
+    <!-- BSc -->
+    <div class="mb-10 ml-6" data-aos="fade-up">
+      <span class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-primary rounded-full"></span>
+      <div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-lg shadow hover:shadow-glow transition">
+        <h3 class="text-xl font-heading font-bold">B.Sc in Computer Science and Engineering</h3>
+        <p class="text-slate-600 dark:text-slate-300">International Islamic University Chittagong</p>
+        <p class="text-sm text-slate-500">Department of Computer Science and Engineering</p>
+        <p class="mt-2">CGPA: 3.634 (up to 5th semester)</p>
+        <p class="text-sm">Expected Graduation: December 2026</p>
+      </div>
+    </div>
+
+    <!-- HSC -->
+    <div class="mb-10 ml-6" data-aos="fade-up">
+      <span class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-primary rounded-full"></span>
+      <div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-lg shadow hover:shadow-glow transition">
+        <h3 class="text-xl font-heading font-bold">Higher Secondary Certificate (HSC)</h3>
+        <p class="text-slate-600 dark:text-slate-300">Kapashgola City Corporation Women College</p>
+        <p class="text-sm text-slate-500">Chattogram Board | GPA: 5.00/5.00</p>
+        <p class="mt-2 text-sm">Year: 2021</p>
+      </div>
+    </div>
+
+    <!-- SSC -->
+    <div class="mb-10 ml-6" data-aos="fade-up">
+      <span class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-primary rounded-full"></span>
+      <div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-lg shadow hover:shadow-glow transition">
+        <h3 class="text-xl font-heading font-bold">Secondary School Certificate (SSC)</h3>
+        <p class="text-slate-600 dark:text-slate-300">City Government Girls High School</p>
+        <p class="text-sm text-slate-500">Chattogram Board | GPA: 4.89/5.00</p>
+        <p class="mt-2 text-sm">Year: 2019</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer class="bg-slate-100 dark:bg-slate-900 py-6 text-center text-sm text-slate-600 dark:text-slate-400 mt-16">
+  © <span id="year"></span> Fatema Binte Emran. All Rights Reserved.
+</footer>
+
+<!-- Scripts -->
+<script>
+function toggleTheme() {
+  document.documentElement.classList.toggle('dark');
+}
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800 });</script>
+
+</body>
+</html>
